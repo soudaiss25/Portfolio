@@ -12,7 +12,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// === EFFET D'APPARITION DES SECTIONS AU SCROLL ===
+
 const sections = document.querySelectorAll("section");
 
 const appearOnScroll = new IntersectionObserver(
@@ -68,9 +68,9 @@ if (form) {
 // === EFFET TITRE DU HERO (TEXTE DYNAMIQUE) ===
 const heroText = document.querySelector(".hero p");
 const texts = [
-  "Développeur web & étudiant en informatique 💻",
-  "Passionné par le code et les projets créatifs 🚀",
-  "Toujours prêt à apprendre de nouvelles techno 🔥"
+  "Développeur web & étudiant en informatique ",
+  "Passionné par le code et les projets créatifs ",
+  "Toujours prêt à apprendre de nouvelles techno "
 ];
 let i = 0;
 

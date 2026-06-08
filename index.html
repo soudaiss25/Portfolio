@@ -3,103 +3,291 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio | [Ton nom]</title>
+  <title>Soudaiss Elfayadine — Dev Full Stack & Data</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="portfolio.css" />
   <script defer src="script.js"></script>
 </head>
 <body>
 
-  <!-- === HEADER / HERO === -->
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <span class="nav-logo">SE</span>
+      <ul class="nav-links">
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#cv">Parcours</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="burger" id="burger">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
   <header class="hero">
+    <div class="hero-bg"></div>
     <div class="container">
-      <h1>Salut, moi c’est <span class="name">Soudaiss ELFAYADINE</span> </h1>
-      <p>Développeur web & étudiant en informatique</p>
+      <p class="hero-tag">👋 Disponible en alternance — Sep. 2026</p>
+      <h1>Soudaiss<br><span class="name">Elfayadine</span></h1>
+      <p class="hero-sub" id="hero-sub">Développeur Full Stack Java · Angular</p>
       <div class="buttons">
         <a href="#projects" class="btn">Voir mes projets</a>
-        <a href="#cv" class="btn btn-outline">Mon CV </a>
+        <a href="#contact" class="btn btn-outline">Me contacter</a>
       </div>
     </div>
+    <div class="scroll-hint">↓</div>
   </header>
 
-  <!-- === SECTION À PROPOS === -->
+  <!-- À PROPOS -->
   <section id="about">
-    <h2>À propos de moi</h2>
-    <p>
-      Passionné par le développement web, je crée des sites modernes et interactifs.
-      Actuellement étudiant en informatique, je me spécialise en programmation,
-      IA et data. 
-    </p>
+    <div class="section-inner">
+      <div class="section-label">01 — À propos</div>
+      <h2>Étudiant en Mastère<br>Dev, Data & IA</h2>
+      <p>
+        En alternance chez <strong>SMABTP</strong> (DSI) en tant que développeur Full Stack, je travaille quotidiennement sur des applications Java Spring Boot + Angular en environnement IBM z/OS DB2. Passionné par la data et l'IA, je cherche une alternance à partir de septembre 2026 (rythme 3 semaines entreprise / 1 semaine école).
+      </p>
 
-    <div class="skills">
-      <h3>Compétences</h3>
-      <ul>
-        <li>HTML / CSS / JavaScript</li>
-        <li>Angular / React (bases)</li>
-        <li>Python / Flask / Django</li>
-        <li>SQL / PostgreSQL</li>
-         <li>Php / Laravel</li>
-      </ul>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h4>Backend</h4>
+          <div class="tags">
+            <span>Java Spring Boot</span>
+            <span>Python</span>
+            <span>PHP / Laravel</span>
+            <span>Node.js</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Frontend</h4>
+          <div class="tags">
+            <span>Angular</span>
+            <span>React / React Native</span>
+            <span>TypeScript</span>
+            <span>HTML / CSS</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Data & IA</h4>
+          <div class="tags">
+            <span>Python / sklearn</span>
+            <span>SQL / DB2</span>
+            <span>Power BI</span>
+            <span>SAS</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Outils</h4>
+          <div class="tags">
+            <span>Git / GitHub</span>
+            <span>Jira / Scrum</span>
+            <span>IBM z/OS</span>
+            <span>Postman</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- === SECTION PROJETS === -->
+  <!-- COMPÉTENCES -->
+  <section id="competences">
+    <div class="section-inner">
+      <div class="section-label">02 — Compétences</div>
+      <h2>Ce que je sais faire</h2>
+
+      <div class="competences-grid">
+
+        <div class="competence-bloc">
+          <h4>🖥️ Développement Backend</h4>
+          <ul>
+            <li>Java Spring Boot — REST API, JPA/Hibernate, tests unitaires JUnit</li>
+            <li>Python — Flask, Django, scripting, automatisation</li>
+            <li>PHP / Laravel — MVC, Eloquent ORM, authentification</li>
+            <li>Node.js — API REST basiques</li>
+          </ul>
+        </div>
+
+        <div class="competence-bloc">
+          <h4>🎨 Développement Frontend</h4>
+          <ul>
+            <li>Angular — composants, services, routing, RxJS, PrimeNG</li>
+            <li>React / React Native — hooks, state management, Expo</li>
+            <li>TypeScript — typage strict, interfaces, génériques</li>
+            <li>HTML / CSS / JavaScript — responsive, animations, Flexbox, Grid</li>
+          </ul>
+        </div>
+
+        <div class="competence-bloc">
+          <h4>🗄️ Bases de données</h4>
+          <ul>
+            <li>SQL — requêtes complexes, jointures, indexes, optimisation</li>
+            <li>IBM DB2 / z·OS — environnement mainframe professionnel</li>
+            <li>PostgreSQL / MySQL — conception de schémas, procédures stockées</li>
+            <li>H2 — base en mémoire pour tests</li>
+          </ul>
+        </div>
+
+        <div class="competence-bloc">
+          <h4>📊 Data & Intelligence Artificielle</h4>
+          <ul>
+            <li>Python sklearn — classification, régression, pipelines ML</li>
+            <li>Pandas / NumPy — manipulation et analyse de données</li>
+            <li>Power BI — tableaux de bord, DAX, visualisations</li>
+            <li>SAS — bases statistiques</li>
+            <li>Modèles ML — StratifiedKFold, tuning de seuils, métriques métier</li>
+          </ul>
+        </div>
+
+        <div class="competence-bloc">
+          <h4>⚙️ DevOps & Outils</h4>
+          <ul>
+            <li>Git / GitHub — branches, pull requests, gestion de conflits</li>
+            <li>Docker — conteneurisation d'applications</li>
+            <li>Postman — tests d'API REST</li>
+            <li>Jira / Confluence — méthodologie Agile / Scrum</li>
+            <li>Netlify — déploiement de sites statiques</li>
+          </ul>
+        </div>
+
+        <div class="competence-bloc">
+          <h4>🌍 Langues & Soft Skills</h4>
+          <ul>
+            <li>Français — courant</li>
+            <li>Anglais — professionnel (lecture de documentation technique)</li>
+            <li>Curieux, autonome, esprit d'équipe</li>
+            <li>À l'aise en environnement Agile et en équipe pluridisciplinaire</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETS -->
   <section id="projects">
-    <h2>Mes projets</h2>
-    <div class="projects-container">
-      <div class="project-card">
-       
-        <h3>Gestion de restaurant</h3>
-        <p>Application laravel permettant de consulter les catalogue d un restaurant et d y faire des commandes en lignes </p>
-        <a href="https://github.com/soudaiss25/ISI_Burger" target="_blank">Voir sur GitHub</a>
-      </div>
+    <div class="section-inner">
+      <div class="section-label">03 — Projets</div>
+      <h2>Ce que j'ai construit</h2>
 
-      <div class="project-card">
-       
-        <h3>Site de voyage</h3>
-        <p>Site web de réservation de voyages avec interface admin et formulaire client .</p>
-        <a href="#" target="_blank">Voir sur GitHub</a>
+      <div class="projects-container">
+        <div class="project-card featured">
+          <div class="project-badge">Stage SMABTP</div>
+          <h3>rw-svc — Gestion documentaire</h3>
+          <p>Application de gestion de références documentaires pour la DSI de SMABTP. Java Spring Boot + Angular + PrimeNG, base DB2 sur IBM z/OS.</p>
+          <div class="project-tags"><span>Java</span><span>Angular</span><span>DB2</span><span>Spring Boot</span></div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-badge">Full Stack</div>
+          <h3>Agence Voyage</h3>
+          <p>Site de réservation de voyages avec interface admin et espace client. Frontend Angular, backend Laravel.</p>
+          <div class="project-tags"><span>Angular</span><span>Laravel</span><span>MySQL</span></div>
+          <a href="https://github.com/soudaiss25/Agence_Voyage" target="_blank" class="project-link">GitHub →</a>
+        </div>
+
+        <div class="project-card">
+          <div class="project-badge">Laravel</div>
+          <h3>ISI Burger</h3>
+          <p>Application de gestion et commande en ligne pour restaurant. Catalogue produit, panier et gestion des commandes.</p>
+          <div class="project-tags"><span>PHP</span><span>Laravel</span><span>MySQL</span></div>
+          <a href="https://github.com/soudaiss25/ISI_Burger" target="_blank" class="project-link">GitHub →</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- === SECTION CV === -->
+  <!-- PARCOURS / CV -->
   <section id="cv">
-    <h2>Mon CV interactif</h2>
-    <div class="cv-section">
-      <h3>Formation</h3>
-      <p>Licence en Génie Logiciel - Institut Supérieur d’Informatique de Dakar</p>
-      <ul>
+    <div class="section-inner">
+      <div class="section-label">04 — Parcours</div>
+      <h2>Formation & expérience</h2>
 
-        <li>Projet personnel : site web  de reservation de voyage avec frontend Angular et backend laravel</li>
-      </ul>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2025 – 2027</div>
+          <div class="timeline-content">
+            <h3>Mastère Dev, Data & IA</h3>
+            <p>IPSSI Paris — En cours</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2025 – Auj.</div>
+          <div class="timeline-content">
+            <h3>Développeur Full Stack — Stage</h3>
+            <p>SMABTP (DSI) · Java Spring Boot · Angular · IBM DB2/z·OS</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2022 – 2025</div>
+          <div class="timeline-content">
+            <h3>Licence Pro Génie Logiciel</h3>
+            <p>Institut Supérieur Informatique — Dakar</p>
+          </div>
+        </div>
+      </div>
 
-      <h3> Soft Skills</h3>
-      <p>Curieux, autonome, esprit d’équipe, toujours prêt à apprendre </p>
+      <div class="cv-extras">
+        <div class="cv-extra-item">
+          <h4>Langues</h4>
+          <p>Français (courant) · Anglais (professionnel)</p>
+        </div>
+        <div class="cv-extra-item">
+          <h4>Soft skills</h4>
+          <p>Curieux · Autonome · Esprit d'équipe · Adaptable</p>
+        </div>
+        <div class="cv-extra-item">
+          <h4>Localisation</h4>
+          <p>La Celle-Saint-Cloud (78) — Île-de-France</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- === SECTION CONTACT === -->
+  <!-- CONTACT -->
   <section id="contact">
-    <h2>Contact</h2>
-    <form id="contact-form">
-      <input type="text" placeholder="Ton nom" required>
-      <input type="email" placeholder="Ton email" required>
-      <textarea placeholder="Ton message..." required></textarea>
-      <button type="submit" class="btn">Envoyer</button>
-    </form>
+    <div class="section-inner">
+      <div class="section-label">05 — Contact</div>
+      <h2>Travaillons ensemble</h2>
+      <p>Je recherche une alternance Dev / Data / IA à partir de septembre 2026. N'hésitez pas à me contacter.</p>
 
-    <div class="socials">
-      <a href="https://github.com/soudaiss25">GitHub</a> |
-      <a href="https://www.linkedin.com/in/soudaiss-elfayadine-b78741288" target="_blank">LinkedIn</a>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <a href="mailto:selfayadine92@gmail.com" class="contact-item">
+            <span class="contact-icon">✉</span>
+            <span>selfayadine92@gmail.com</span>
+          </a>
+          <a href="tel:0781906083" class="contact-item">
+            <span class="contact-icon">☎</span>
+            <span>07 81 90 60 83</span>
+          </a>
+          <a href="https://www.linkedin.com/in/soudaiss-elfayadine-b78741288" target="_blank" class="contact-item">
+            <span class="contact-icon">in</span>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://github.com/soudaiss25" target="_blank" class="contact-item">
+            <span class="contact-icon">⌥</span>
+            <span>GitHub</span>
+          </a>
+        </div>
 
-      <a href="mailto:selfayadine92@gmail.com">selfayadine92@gmail.com</a>
+        <form id="contact-form" action="https://formspree.io/f/xeewgadg" method="POST">
+          <input type="text" name="name" placeholder="Votre nom" required>
+          <input type="email" name="email" placeholder="Votre email" required>
+          <textarea name="message" placeholder="Votre message..." required></textarea>
+          <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio">
+          <button type="submit" class="btn">Envoyer le message</button>
+        </form>
+      </div>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Soudaiss ELFAYADINE. Tous droits réservés.</p>
+    <p>© 2025 Soudaiss Elfayadine · La Celle-Saint-Cloud · Fait avec ❤ et beaucoup de café</p>
   </footer>
 
 </body>
 </html>
- 

@@ -1,83 +1,69 @@
-// === NAVBAR SCROLL ===
+// =========================================================
+// 1. La barre de navigation devient blanche quand on descend
+// =========================================================
 const navbar = document.getElementById('navbar');
+
 window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 50);
+  if (window.scrollY > 40) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
 });
 
-// === BURGER MENU ===
+// =========================================================
+// 2. Menu burger sur mobile
+// =========================================================
 const burger = document.getElementById('burger');
-const navLinks = document.querySelector('.nav-links');
-burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+const navLinks = document.getElementById('nav-links');
 
-// === HERO TEXTE DYNAMIQUE ===
-const texts = [
-  "Développeur Full Stack Java · Angular",
-  "Étudiant Mastère Dev, Data & IA — IPSSI Paris",
-  "En alternance à partir de septembre 2026",
-  "Passionné par le code, la data et l'IA"
-];
-let i = 0;
-const heroSub = document.getElementById('hero-sub');
-setInterval(() => {
-  heroSub.style.opacity = '0';
-  setTimeout(() => {
-    i = (i + 1) % texts.length;
-    heroSub.textContent = texts[i];
-    heroSub.style.opacity = '1';
-  }, 400);
-}, 3200);
-
-// === ANIMATIONS SCROLL ===
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
-  });
-}, { threshold: 0.12 });
-
-document.querySelectorAll('section, .project-card, .timeline-item, .skill-group, .contact-item').forEach(el => {
-  el.classList.add('fade-up');
-  observer.observe(el);
+burger.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
 });
 
-// === FORMULAIRE CONTACT (Formspree) ===
-const form = document.getElementById('contact-form');
-if (form) {
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const btn = form.querySelector('button[type="submit"]');
-    btn.textContent = 'Envoi en cours...';
-    btn.disabled = true;
+// On referme le menu quand on clique sur un lien
+navLinks.querySelectorAll('a').forEach((lien) => {
+  lien.addEventListener('click', () => navLinks.classList.remove('open'));
+});
 
-    const data = new FormData(form);
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      });
-      if (response.ok) {
-        btn.textContent = 'Message envoyé ✓';
-        btn.style.background = '#22c55e';
-        form.reset();
-      } else {
-        btn.textContent = 'Erreur, réessayez';
-        btn.disabled = false;
-      }
-    } catch {
-      btn.textContent = 'Erreur réseau';
-      btn.disabled = false;
-    }
-  });
+// =========================================================
+// 3. Le sous-titre de l'accueil change toutes les 3 secondes
+//    Pour modifier les phrases, change simplement ce tableau.
+// =========================================================
+const phrases = [
+  'Développeur Full Stack Java et Angular',
+  'Je construis des applications web solides',
+  'Laravel, React, Spring Boot et SQL'
+];
+
+const heroSub = document.getElementById('hero-sub');
+const mouvementReduit = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let index = 0;
+
+if (heroSub && !mouvementReduit) {
+  setInterval(() => {
+    heroSub.style.opacity = 0;             // on fait disparaître
+    setTimeout(() => {
+      index = (index + 1) % phrases.length; // phrase suivante
+      heroSub.textContent = phrases[index];
+      heroSub.style.opacity = 1;           // on fait réapparaître
+    }, 400);
+  }, 3000);
 }
 
-// === SMOOTH SCROLL NAV ===
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
-      navLinks.classList.remove('open');
+// =========================================================
+// 4. Les sections apparaissent en douceur quand on les voit
+// =========================================================
+const sections = document.querySelectorAll('section .section-inner');
+sections.forEach((el) => el.classList.add('fade-up'));
+
+const observateur = new IntersectionObserver((entrees) => {
+  entrees.forEach((entree) => {
+    if (entree.isIntersecting) {
+      entree.target.classList.add('visible');
+      observateur.unobserve(entree.target); // une seule fois suffit
     }
   });
-});
+}, { threshold: 0.15 });
+
+sections.forEach((el) => observateur.observe(el));

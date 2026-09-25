@@ -3,55 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Soudaiss Elfayadine — Dev Full Stack & Data</title>
+  <title>Soudaiss Elfayadine — Développeur Full Stack</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="portfolio.css" />
   <script defer src="script.js"></script>
+
+  <!-- ANALYTICS : GoatCounter
+       Remplace "soudaiss" par ton code GoatCounter si tu en as choisi un autre -->
+  <script data-goatcounter="https://soudaiss.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- NAVIGATION -->
   <nav id="navbar">
     <div class="nav-inner">
-      <span class="nav-logo">SE</span>
-      <ul class="nav-links">
+      <a href="#top" class="nav-logo">Soudaiss</a>
+      <ul class="nav-links" id="nav-links">
         <li><a href="#about">À propos</a></li>
+        <li><a href="#competences">Compétences</a></li>
         <li><a href="#projects">Projets</a></li>
         <li><a href="#cv">Parcours</a></li>
         <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
-      <button class="burger" id="burger">&#9776;</button>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu">&#9776;</button>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="hero-bg"></div>
+  <!-- ACCUEIL -->
+  <header class="hero" id="top">
+    <div class="hero-shapes" aria-hidden="true">
+      <span class="shape shape-sun"></span>
+      <span class="shape shape-teal"></span>
+      <span class="shape shape-pink"></span>
+    </div>
     <div class="container">
-      <p class="hero-tag">👋 Disponible en alternance — Sep. 2026</p>
-      <h1>Soudaiss<br><span class="name">Elfayadine</span></h1>
-      <p class="hero-sub" id="hero-sub">Développeur Full Stack Java · Angular</p>
+      <p class="hero-tag">Disponible en alternance</p>
+      <h1>Salut, moi c'est Soudaiss&nbsp;Elfayadine</h1>
+      <p class="hero-sub" id="hero-sub">Développeur Full Stack Java et Angular</p>
       <div class="buttons">
-        <a href="#projects" class="btn">Voir mes projets</a>
-        <a href="#contact" class="btn btn-outline">Me contacter</a>
+        <a href="#projects" class="btn" data-goatcounter-click="hero-voir-projets">Voir mes projets</a>
+        <a href="#contact" class="btn btn-light" data-goatcounter-click="hero-me-contacter">Me contacter</a>
       </div>
     </div>
-    <div class="scroll-hint">↓</div>
   </header>
 
   <!-- À PROPOS -->
   <section id="about">
     <div class="section-inner">
-      <div class="section-label">01 — À propos</div>
-      <h2>Étudiant en Mastère<br>Dev, Data & IA</h2>
-      <p>
-        En alternance chez <strong>SMABTP</strong> (DSI) en tant que développeur Full Stack, je travaille quotidiennement sur des applications Java Spring Boot + Angular en environnement IBM z/OS DB2. Passionné par la data et l'IA, je cherche une alternance à partir de septembre 2026 (rythme 3 semaines entreprise / 1 semaine école).
+      <h2>Étudiant en Mastère Développement &amp; Data</h2>
+      <p class="intro">
+        En alternance chez <strong>SMABTP</strong> (DSI) en tant que développeur Full Stack, je travaille au quotidien sur des applications Java Spring Boot et Angular, en environnement IBM z/OS DB2. J'aime aussi beaucoup travailler avec les données. Je cherche une alternance au rythme de 3 semaines en entreprise et 1 semaine à l'école.
       </p>
 
       <div class="skills-grid">
         <div class="skill-group">
-          <h4>Backend</h4>
+          <h3>Backend</h3>
           <div class="tags">
             <span>Java Spring Boot</span>
             <span>Python</span>
@@ -60,7 +69,7 @@
           </div>
         </div>
         <div class="skill-group">
-          <h4>Frontend</h4>
+          <h3>Frontend</h3>
           <div class="tags">
             <span>Angular</span>
             <span>React / React Native</span>
@@ -69,16 +78,16 @@
           </div>
         </div>
         <div class="skill-group">
-          <h4>Data & IA</h4>
+          <h3>Data</h3>
           <div class="tags">
-            <span>Python / sklearn</span>
+            <span>Python / Pandas</span>
             <span>SQL / DB2</span>
             <span>Power BI</span>
             <span>SAS</span>
           </div>
         </div>
         <div class="skill-group">
-          <h4>Outils</h4>
+          <h3>Outils</h3>
           <div class="tags">
             <span>Git / GitHub</span>
             <span>Jira / Scrum</span>
@@ -93,70 +102,67 @@
   <!-- COMPÉTENCES -->
   <section id="competences">
     <div class="section-inner">
-      <div class="section-label">02 — Compétences</div>
       <h2>Ce que je sais faire</h2>
 
       <div class="competences-grid">
 
         <div class="competence-bloc">
-          <h4>🖥️ Développement Backend</h4>
+          <h3><span class="emoji">🖥️</span> Développement backend</h3>
           <ul>
-            <li>Java Spring Boot — REST API, JPA/Hibernate, tests unitaires JUnit</li>
-            <li>Python — Flask, Django, scripting, automatisation</li>
-            <li>PHP / Laravel — MVC, Eloquent ORM, authentification</li>
-            <li>Node.js — API REST basiques</li>
+            <li>Java Spring Boot : API REST, JPA/Hibernate, tests unitaires JUnit</li>
+            <li>Python : Flask, Django, scripts d'automatisation</li>
+            <li>PHP / Laravel : MVC, Eloquent ORM, authentification</li>
+            <li>Node.js : API REST simples</li>
           </ul>
         </div>
 
         <div class="competence-bloc">
-          <h4>🎨 Développement Frontend</h4>
+          <h3><span class="emoji">🎨</span> Développement frontend</h3>
           <ul>
-            <li>Angular — composants, services, routing, RxJS, PrimeNG</li>
-            <li>React / React Native — hooks, state management, Expo</li>
-            <li>TypeScript — typage strict, interfaces, génériques</li>
-            <li>HTML / CSS / JavaScript — responsive, animations, Flexbox, Grid</li>
+            <li>Angular : composants, services, routing, RxJS, PrimeNG</li>
+            <li>React / React Native : hooks, gestion d'état, Expo</li>
+            <li>TypeScript : typage strict, interfaces, génériques</li>
+            <li>HTML / CSS / JavaScript : responsive, Flexbox, Grid</li>
           </ul>
         </div>
 
         <div class="competence-bloc">
-          <h4>🗄️ Bases de données</h4>
+          <h3><span class="emoji">🗄️</span> Bases de données</h3>
           <ul>
-            <li>SQL — requêtes complexes, jointures, indexes, optimisation</li>
-            <li>IBM DB2 / z·OS — environnement mainframe professionnel</li>
-            <li>PostgreSQL / MySQL — conception de schémas, procédures stockées</li>
-            <li>H2 — base en mémoire pour tests</li>
+            <li>SQL : requêtes complexes, jointures, index, optimisation</li>
+            <li>IBM DB2 / z/OS : environnement mainframe professionnel</li>
+            <li>PostgreSQL / MySQL : conception de schémas, procédures stockées</li>
+            <li>H2 : base en mémoire pour les tests</li>
           </ul>
         </div>
 
         <div class="competence-bloc">
-          <h4>📊 Data & Intelligence Artificielle</h4>
+          <h3><span class="emoji">📊</span> Data &amp; analyse</h3>
           <ul>
-            <li>Python sklearn — classification, régression, pipelines ML</li>
-            <li>Pandas / NumPy — manipulation et analyse de données</li>
-            <li>Power BI — tableaux de bord, DAX, visualisations</li>
-            <li>SAS — bases statistiques</li>
-            <li>Modèles ML — StratifiedKFold, tuning de seuils, métriques métier</li>
+            <li>Pandas / NumPy : manipulation et analyse de données</li>
+            <li>Power BI : tableaux de bord, DAX, visualisations</li>
+            <li>SAS : bases statistiques</li>
           </ul>
         </div>
 
         <div class="competence-bloc">
-          <h4>⚙️ DevOps & Outils</h4>
+          <h3><span class="emoji">⚙️</span> DevOps &amp; outils</h3>
           <ul>
-            <li>Git / GitHub — branches, pull requests, gestion de conflits</li>
-            <li>Docker — conteneurisation d'applications</li>
-            <li>Postman — tests d'API REST</li>
-            <li>Jira / Confluence — méthodologie Agile / Scrum</li>
-            <li>Netlify — déploiement de sites statiques</li>
+            <li>Git / GitHub : branches, pull requests, gestion de conflits</li>
+            <li>Docker : conteneurisation d'applications</li>
+            <li>Postman : tests d'API REST</li>
+            <li>Jira / Confluence : méthode Agile / Scrum</li>
+            <li>Netlify : déploiement de sites statiques</li>
           </ul>
         </div>
 
         <div class="competence-bloc">
-          <h4>🌍 Langues & Soft Skills</h4>
+          <h3><span class="emoji">🌍</span> Langues &amp; savoir-être</h3>
           <ul>
-            <li>Français — courant</li>
-            <li>Anglais — professionnel (lecture de documentation technique)</li>
+            <li>Français : courant</li>
+            <li>Anglais : professionnel (documentation technique)</li>
             <li>Curieux, autonome, esprit d'équipe</li>
-            <li>À l'aise en environnement Agile et en équipe pluridisciplinaire</li>
+            <li>À l'aise en équipe Agile et pluridisciplinaire</li>
           </ul>
         </div>
 
@@ -167,81 +173,70 @@
   <!-- PROJETS -->
   <section id="projects">
     <div class="section-inner">
-      <div class="section-label">03 — Projets</div>
       <h2>Ce que j'ai construit</h2>
 
       <div class="projects-container">
-        <div class="project-card featured">
-          <div class="project-badge">Stage SMABTP</div>
-          <h3>rw-svc — Gestion documentaire</h3>
-          <p>Application de gestion de références documentaires pour la DSI de SMABTP. Java Spring Boot + Angular + PrimeNG, base DB2 sur IBM z/OS.</p>
+        <article class="project-card featured">
+          <span class="project-badge">Alternance SMABTP</span>
+          <h3>rw-svc, gestion documentaire</h3>
+          <p>Application de gestion de références documentaires pour la DSI de SMABTP. Java Spring Boot, Angular et PrimeNG, avec une base DB2 sur IBM z/OS.</p>
           <div class="project-tags"><span>Java</span><span>Angular</span><span>DB2</span><span>Spring Boot</span></div>
-        </div>
+        </article>
 
-        <div class="project-card">
-          <div class="project-badge">Full Stack</div>
+        <article class="project-card">
+          <span class="project-badge">Full Stack</span>
           <h3>Agence Voyage</h3>
-          <p>Site de réservation de voyages avec interface admin et espace client. Frontend Angular, backend Laravel.</p>
+          <p>Site de réservation de voyages avec une interface admin et un espace client. Frontend Angular, backend Laravel.</p>
           <div class="project-tags"><span>Angular</span><span>Laravel</span><span>MySQL</span></div>
-          <a href="https://github.com/soudaiss25/Agence_Voyage" target="_blank" class="project-link">GitHub →</a>
-        </div>
+          <a href="https://github.com/soudaiss25/Agence_Voyage" target="_blank" rel="noopener" class="project-link" data-goatcounter-click="projet-agence-voyage">Voir le code sur GitHub</a>
+        </article>
 
-        <div class="project-card">
-          <div class="project-badge">Laravel</div>
+        <article class="project-card">
+          <span class="project-badge">Laravel</span>
           <h3>ISI Burger</h3>
-          <p>Application de gestion et commande en ligne pour restaurant. Catalogue produit, panier et gestion des commandes.</p>
+          <p>Application de commande en ligne pour un restaurant : catalogue de produits, panier et gestion des commandes.</p>
           <div class="project-tags"><span>PHP</span><span>Laravel</span><span>MySQL</span></div>
-          <a href="https://github.com/soudaiss25/ISI_Burger" target="_blank" class="project-link">GitHub →</a>
-        </div>
+          <a href="https://github.com/soudaiss25/ISI_Burger" target="_blank" rel="noopener" class="project-link" data-goatcounter-click="projet-isi-burger">Voir le code sur GitHub</a>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- PARCOURS / CV -->
+  <!-- PARCOURS -->
   <section id="cv">
     <div class="section-inner">
-      <div class="section-label">04 — Parcours</div>
-      <h2>Formation & expérience</h2>
+      <h2>Formation et expérience</h2>
 
       <div class="timeline">
         <div class="timeline-item">
-          <div class="timeline-dot"></div>
           <div class="timeline-year">2025 – 2027</div>
-          <div class="timeline-content">
-            <h3>Mastère Dev, Data & IA</h3>
-            <p>IPSSI Paris — En cours</p>
-          </div>
+          <h3>Mastère Développement &amp; Data</h3>
+          <p>IPSSI Paris, en cours</p>
         </div>
         <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-year">2025 – Auj.</div>
-          <div class="timeline-content">
-            <h3>Développeur Full Stack — Stage</h3>
-            <p>SMABTP (DSI) · Java Spring Boot · Angular · IBM DB2/z·OS</p>
-          </div>
+          <div class="timeline-year">2025 – aujourd'hui</div>
+          <h3>Développeur Full Stack</h3>
+          <p>SMABTP (DSI), Java Spring Boot, Angular, IBM DB2 / z/OS</p>
         </div>
         <div class="timeline-item">
-          <div class="timeline-dot"></div>
           <div class="timeline-year">2022 – 2025</div>
-          <div class="timeline-content">
-            <h3>Licence Pro Génie Logiciel</h3>
-            <p>Institut Supérieur Informatique — Dakar</p>
-          </div>
+          <h3>Licence Pro Génie Logiciel</h3>
+          <p>Institut Supérieur Informatique, Dakar</p>
         </div>
       </div>
 
       <div class="cv-extras">
         <div class="cv-extra-item">
-          <h4>Langues</h4>
-          <p>Français (courant) · Anglais (professionnel)</p>
+          <h3>Langues</h3>
+          <p>Français courant, anglais professionnel</p>
         </div>
         <div class="cv-extra-item">
-          <h4>Soft skills</h4>
-          <p>Curieux · Autonome · Esprit d'équipe · Adaptable</p>
+          <h3>Savoir-être</h3>
+          <p>Curieux, autonome, adaptable, esprit d'équipe</p>
         </div>
         <div class="cv-extra-item">
-          <h4>Localisation</h4>
-          <p>La Celle-Saint-Cloud (78) — Île-de-France</p>
+          <h3>Localisation</h3>
+          <p>La Celle-Saint-Cloud (78), Île-de-France</p>
         </div>
       </div>
     </div>
@@ -250,43 +245,45 @@
   <!-- CONTACT -->
   <section id="contact">
     <div class="section-inner">
-      <div class="section-label">05 — Contact</div>
       <h2>Travaillons ensemble</h2>
-      <p>Je recherche une alternance Dev / Data / IA à partir de septembre 2026. N'hésitez pas à me contacter.</p>
+      <p class="intro">Je cherche une alternance en développement ou en data. N'hésitez pas à m'écrire, je réponds vite.</p>
 
       <div class="contact-grid">
         <div class="contact-info">
-          <a href="mailto:selfayadine92@gmail.com" class="contact-item">
+          <a href="mailto:selfayadine92@gmail.com" class="contact-item" data-goatcounter-click="contact-email">
             <span class="contact-icon">✉</span>
             <span>selfayadine92@gmail.com</span>
           </a>
-          <a href="tel:0781906083" class="contact-item">
+          <a href="tel:0781906083" class="contact-item" data-goatcounter-click="contact-telephone">
             <span class="contact-icon">☎</span>
             <span>07 81 90 60 83</span>
           </a>
-          <a href="https://www.linkedin.com/in/soudaiss-elfayadine-b78741288" target="_blank" class="contact-item">
+          <a href="https://www.linkedin.com/in/soudaiss-elfayadine-b78741288" target="_blank" rel="noopener" class="contact-item" data-goatcounter-click="contact-linkedin">
             <span class="contact-icon">in</span>
             <span>LinkedIn</span>
           </a>
-          <a href="https://github.com/soudaiss25" target="_blank" class="contact-item">
+          <a href="https://github.com/soudaiss25" target="_blank" rel="noopener" class="contact-item" data-goatcounter-click="contact-github">
             <span class="contact-icon">⌥</span>
             <span>GitHub</span>
           </a>
         </div>
 
         <form id="contact-form" action="https://formspree.io/f/xeewgadg" method="POST">
-          <input type="text" name="name" placeholder="Votre nom" required>
-          <input type="email" name="email" placeholder="Votre email" required>
-          <textarea name="message" placeholder="Votre message..." required></textarea>
+          <label for="name">Votre nom</label>
+          <input type="text" id="name" name="name" required>
+          <label for="email">Votre email</label>
+          <input type="email" id="email" name="email" required>
+          <label for="message">Votre message</label>
+          <textarea id="message" name="message" required></textarea>
           <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio">
-          <button type="submit" class="btn">Envoyer le message</button>
+          <button type="submit" class="btn" data-goatcounter-click="formulaire-envoye">Envoyer le message</button>
         </form>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Soudaiss Elfayadine · La Celle-Saint-Cloud · Fait avec ❤ et beaucoup de café</p>
+    <p>© 2026 Soudaiss Elfayadine. Fait avec ❤ et beaucoup de café.</p>
   </footer>
 
 </body>

@@ -344,8 +344,129 @@ h2 {
 }
 .project-link:hover { color: var(--teal); }
 
+/* --- Projet vitrine : occupe toute la largeur, avec ses captures --- */
+.project-vitrine {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 32px;
+  background: #D3F3EF;
+}
+.project-vitrine:hover { transform: none; box-shadow: var(--shadow); }
+
+.vitrine-texte {
+  flex: 1 1 320px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.vitrine-texte h3 { font-size: 1.6rem; }
+.vitrine-texte .project-badge { background: var(--sun); }
+
+.vitrine-images {
+  flex: 1 1 420px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  align-content: start;
+  min-width: 0;
+}
+.vignette {
+  padding: 0;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  background: #FFFFFF;
+  box-shadow: 3px 3px 0 var(--line);
+  cursor: pointer;
+  overflow: hidden;
+  display: block;
+  line-height: 0;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.vignette:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--line); }
+.vignette img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+  aspect-ratio: 4 / 3;
+}
+.vignette-large { grid-column: 1 / -1; }
+.vignette-large img { aspect-ratio: 16 / 7; }
+
 /* =========================================================
-   10. PARCOURS
+   10. VISIONNEUSE D'IMAGES
+   ========================================================= */
+.visionneuse {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(29, 33, 64, 0.82);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.visionneuse[hidden] { display: none; }
+
+.visionneuse-cadre {
+  position: relative;
+  background: #FFFFFF;
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+  max-width: 1000px;
+  width: 100%;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.visionneuse-cadre img {
+  width: 100%;
+  min-height: 0;
+  flex: 1 1 auto;
+  object-fit: contain;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  background: var(--bg);
+}
+.visionneuse-fermer {
+  position: absolute;
+  top: -16px; right: -16px;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  background: var(--pink);
+  color: var(--ink);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 var(--line);
+}
+.visionneuse-bas {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.visionneuse-legende {
+  flex: 1 1 240px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+.visionneuse-nav {
+  padding: 8px 18px;
+  font-size: 0.92rem;
+  box-shadow: 3px 3px 0 var(--line);
+}
+
+/* =========================================================
+   11. PARCOURS
    ========================================================= */
 .timeline {
   position: relative;
@@ -398,7 +519,7 @@ h2 {
 .cv-extra-item p { color: var(--muted); font-size: 0.95rem; }
 
 /* =========================================================
-   11. CONTACT
+   12. CONTACT
    ========================================================= */
 .contact-grid {
   display: grid;
@@ -445,7 +566,7 @@ textarea { min-height: 140px; resize: vertical; }
 form .btn { margin-top: 14px; align-self: flex-start; }
 
 /* =========================================================
-   12. PIED DE PAGE
+   13. PIED DE PAGE
    ========================================================= */
 footer {
   background: var(--ink);
@@ -456,7 +577,7 @@ footer {
 }
 
 /* =========================================================
-   13. APPARITION AU DÉFILEMENT (géré par script.js)
+   14. APPARITION AU DÉFILEMENT (géré par script.js)
    ========================================================= */
 .fade-up {
   opacity: 0;
@@ -468,12 +589,18 @@ footer {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .fade-up { opacity: 1; transform: none; transition: none; }
-  .btn, .project-card, .contact-item { transition: none; }
+  .btn, .project-card, .contact-item, .vignette { transition: none; }
 }
 
 /* =========================================================
-   14. MOBILE
+   15. MOBILE
    ========================================================= */
+@media (max-width: 900px) {
+  .project-vitrine { flex-direction: column; gap: 24px; }
+  .vitrine-images { grid-template-columns: repeat(2, 1fr); }
+  .vignette-large img { aspect-ratio: 16 / 9; }
+}
+
 @media (max-width: 768px) {
   .burger { display: block; }
   .nav-links {
@@ -497,4 +624,9 @@ footer {
 
   .contact-grid { grid-template-columns: 1fr; }
   section { padding: 70px 5%; }
+
+  .visionneuse { padding: 16px; }
+  .visionneuse-cadre { padding: 12px; }
+  .visionneuse-fermer { top: -12px; right: -12px; width: 38px; height: 38px; font-size: 1.3rem; }
+  .visionneuse-bas { justify-content: center; }
 }

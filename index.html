@@ -176,6 +176,41 @@
       <h2>Ce que j'ai construit</h2>
 
       <div class="projects-container">
+
+        <article class="project-card project-vitrine">
+          <div class="vitrine-texte">
+            <span class="project-badge">Projet personnel</span>
+            <h3>Faltack CRM</h3>
+            <p>
+              CRM et gestion financière pour un cabinet comptable, développés de bout en bout.
+              Pipeline commercial, facturation avec export PDF, suivi des paiements et des impayés,
+              diagnostic financier automatique par client, gestion documentaire et permissions par rôle.
+            </p>
+            <div class="project-tags">
+              <span>Next.js</span><span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>Supabase</span>
+            </div>
+            <a href="https://github.com/soudaiss25/Faltack-CRM" target="_blank" rel="noopener" class="project-link" data-goatcounter-click="projet-faltack-crm">Voir le code sur GitHub</a>
+          </div>
+
+          <div class="vitrine-images">
+            <button type="button" class="vignette vignette-large" data-image="images/faltack/dashboard.png" data-legende="Tableau de bord : CA, marge, pipeline commercial et points de vigilance">
+              <img src="images/faltack/dashboard.png" alt="Tableau de bord de Faltack CRM" loading="lazy">
+            </button>
+            <button type="button" class="vignette" data-image="images/faltack/factures.png" data-legende="Fiche entreprise : factures, dépenses, contacts et historique">
+              <img src="images/faltack/factures.png" alt="Factures d'une entreprise cliente" loading="lazy">
+            </button>
+            <button type="button" class="vignette" data-image="images/faltack/documents.png" data-legende="Gestion documentaire avec recherche et historique des versions">
+              <img src="images/faltack/documents.png" alt="Gestion documentaire" loading="lazy">
+            </button>
+            <button type="button" class="vignette" data-image="images/faltack/utilisateurs.png" data-legende="Comptes et rôles : super admin, collaborateur, client">
+              <img src="images/faltack/utilisateurs.png" alt="Gestion des utilisateurs et des rôles" loading="lazy">
+            </button>
+            <button type="button" class="vignette" data-image="images/faltack/connexion.png" data-legende="Connexion sécurisée : mots de passe hachés et session par token">
+              <img src="images/faltack/connexion.png" alt="Page de connexion" loading="lazy">
+            </button>
+          </div>
+        </article>
+
         <article class="project-card featured">
           <span class="project-badge">Alternance SMABTP</span>
           <h3>rw-svc, gestion documentaire</h3>
@@ -198,6 +233,7 @@
           <div class="project-tags"><span>PHP</span><span>Laravel</span><span>MySQL</span></div>
           <a href="https://github.com/soudaiss25/ISI_Burger" target="_blank" rel="noopener" class="project-link" data-goatcounter-click="projet-isi-burger">Voir le code sur GitHub</a>
         </article>
+
       </div>
     </div>
   </section>
@@ -285,6 +321,19 @@
   <footer>
     <p>© 2026 Soudaiss Elfayadine.</p>
   </footer>
+
+  <!-- VISIONNEUSE D'IMAGES -->
+  <div class="visionneuse" id="visionneuse" role="dialog" aria-modal="true" aria-label="Aperçu du projet" hidden>
+    <div class="visionneuse-cadre">
+      <button type="button" class="visionneuse-fermer" id="visionneuse-fermer" aria-label="Fermer l'aperçu">&times;</button>
+      <img id="visionneuse-image" src="" alt="">
+      <div class="visionneuse-bas">
+        <button type="button" class="btn btn-light visionneuse-nav" id="visionneuse-precedent">Précédente</button>
+        <p class="visionneuse-legende" id="visionneuse-legende"></p>
+        <button type="button" class="btn visionneuse-nav" id="visionneuse-suivant">Suivante</button>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
